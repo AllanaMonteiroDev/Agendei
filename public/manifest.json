@@ -1,0 +1,24 @@
+{
+  "name": "Agendei",
+  "short_name": "Agendei",
+  "description": "Sua agenda profissional",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#F8F4F6",
+  "theme_color": "#C2185B",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
