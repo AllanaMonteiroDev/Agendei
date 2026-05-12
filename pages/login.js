@@ -21,7 +21,30 @@ export default function Login() {
     setLoading(true)
     setMessage('')
     if (isSignUp) {
-      const { error } = await supabase.auth.signUp({ email, password })
+     const { data, error } = await supabase.auth.signUp({
+  email,
+  password,
+})
+
+if (!error) {
+  const hoje = new Date()
+
+  const vencimento = new Date()
+  vencimento.setDate(hoje.getDate() + 7)
+
+  const { error: clienteError } = await supabase
+    .from('clientes')
+    .insert({
+      email,
+      nome: email,
+      status: 'teste',
+      vencimento,
+    })
+
+  if (clienteError) {
+    console.log(clienteError)
+  }
+}
       if (error) setMessage(error.message)
       else setMessage('Verifique seu e-mail para confirmar o cadastro!')
     } else {
